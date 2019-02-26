@@ -8,10 +8,11 @@
     <link href="assets/css/desktop.css" media="(min-width: 1025px)" rel="stylesheet">
 </head>
 <body>
-<header>
-    <figure class="header-logo">
-        <img alt="logo" src="assets/img/logo.png">
-    </figure>
+<header class="fixed">
+    <form class="header-search-form">
+        <a class="search-reset" href="/"></a>
+        <input class="search-input" placeholder="Введите запрос" type="search" value="Поисковый запрос">
+    </form>
     <section class="user-menu">
         <a href="#">
             <figure class="user-info">
@@ -24,11 +25,15 @@
         </a>
     </section>
 </header>
-<main class="search-form-section">
-    <form action="results.html" class="search-form">
-        <input class="search-input" placeholder="Введите запрос" type="search">
-        <button class="search-button" type="submit">Search</button>
-    </form>
+<main class="results-list">
+    <a class="result-item" href="#">
+        <h2>Title</h2>
+        <span>https://sub.domain.com/catalog/to/page.html</span>
+        <blockquote>
+            Релевантный текст, найденный на странице сайта<br>
+            И еще немного текста…
+        </blockquote>
+    </a>
 </main>
 </body>
 </html>
