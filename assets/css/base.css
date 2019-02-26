@@ -17,7 +17,7 @@ html, body {
     --padding-top: var(--base-padding);
     --padding-bottom: var(--base-padding);
 
-    --header-height: 40px;
+    --header-height: 50px;
     --search-form-height: 50px;
 
     font-family: sans-serif;
@@ -78,6 +78,8 @@ header {
 }
 
 .user-menu {
+    --height: calc(var(--header-height) - 10px);
+
     height: var(--height, var(--header-height));
     display: flex;
     align-items: center;
@@ -117,9 +119,15 @@ header {
 
 .user-menu .user-info .user-pic {
     --size: var(--height, var(--header-height));
+
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
+
+    text-align: center;
+    font-size: 35px;
+    line-height: var(--size);
+    border-radius: unset;
 }
 
 header.fixed {
@@ -138,6 +146,7 @@ header.fixed .header-logo {
 
 header.fixed .user-menu {
     --height: calc(var(--header-height) - 10px);
+    margin-right: calc(var(--padding-right) * -.5);
 }
 
 header.fixed .user-menu .user-info .user-name-section {
@@ -177,7 +186,7 @@ main.search-form-section {
     width: 100%;
     border: unset;
     margin: unset;
-    padding: 0 10px;
+    padding: 0 20px;
     font-size: 18px;
     font-weight: 300;
     color: rgba(101, 0, 255, 0.68);
@@ -199,8 +208,8 @@ main.search-form-section {
     margin: unset;
     padding: unset;
     font-size: 0;
-
     background-color: rgba(101, 0, 255, 0.68);
+    cursor: pointer;
 }
 
 .search-form .search-button:before {
@@ -209,6 +218,7 @@ main.search-form-section {
     transform: rotate(-45deg);
     color: white;
     font-size: 35px;
+    font-weight: 100;
 }
 
 .header-search-form {
@@ -228,6 +238,7 @@ main.search-form-section {
     min-height: var(--size);
     width: var(--size);
     min-width: var(--size);
+    margin-left: calc(var(--padding-left) * -1);
     font-size: 0;
 }
 
@@ -273,9 +284,14 @@ main.results-list {
 }
 
 .result-item .url {
+    display: inline-block;
     font-size: 14px;
     line-height: 1.43;
     color: rgba(94, 82, 205, 0.71);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .result-item .content {
