@@ -252,5 +252,37 @@ main.search-form-section {
 }
 
 main.results-list {
+    padding-top: var(--header-height);
+}
 
+.result-item {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.result-item .title {
+    margin: unset;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #121414;
+}
+
+.result-item .url {
+    font-size: 14px;
+    line-height: 1.43;
+    color: rgba(94, 82, 205, 0.71);
+}
+
+.result-item .content {
+    padding: unset;
+    margin: unset;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #2f2f2f;
 }
