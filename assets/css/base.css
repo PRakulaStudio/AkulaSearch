@@ -132,6 +132,7 @@ header {
 
 header.fixed {
     position: fixed;
+    flex-flow: row;
     top: 0;
     left: 0;
     right: 0;
@@ -145,6 +146,7 @@ header.fixed .header-logo {
 }
 
 header.fixed .user-menu {
+    flex: 0 1 auto;
     --height: calc(var(--header-height) - 10px);
     margin-right: calc(var(--padding-right) * -.5);
 }
@@ -171,8 +173,9 @@ main.search-form-section {
     --size: var(--search-form-height, 50px);
 
     display: flex;
-    flex-flow: row;
+    /*flex: 1 1 auto;*/
     height: var(--size);
+    width: 100%;
     border-radius: 15px;
     background-color: white;
     overflow: hidden;
@@ -223,6 +226,7 @@ main.search-form-section {
 
 .header-search-form {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: row;
 }
@@ -244,12 +248,11 @@ main.search-form-section {
 
 .header-search-form .search-reset:before {
     content: '✕';
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .header-search-form .search-input {
     -webkit-appearance: unset;
-    flex: 1 1 auto;
     height: 100%;
     width: 100%;
     border: unset;
@@ -264,15 +267,19 @@ main.search-form-section {
 
 main.results-list {
     padding-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
 }
 
 .result-item {
-    display: block;
+    display: inline-block;
+    align-self: flex-start;
     padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .result-item .title {
@@ -301,4 +308,42 @@ main.results-list {
     font-size: 14px;
     line-height: 1.43;
     color: #2f2f2f;
+}
+
+@media (min-height: 667px) {
+    :root {
+        --base-padding: 30px;
+
+        --header-height: 60px;
+        --search-form-height: 60px;
+    }
+
+    .search-form .search-button:before {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 568px) {
+    .search-form {
+        width: 100%;
+        max-width: 60vw;
+    }
+
+    main.results-list {
+        width: 100%;
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 667px) {
+    main.results-list {
+        max-width: 70vw;
+    }
+}
+
+@media (min-width: 736px) {
+    main.results-list {
+        max-width: 60vw;
+    }
 }

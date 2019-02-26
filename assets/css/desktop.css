@@ -1,0 +1,39 @@
+:root {
+    --base-padding: 40px;
+    --horizontal-padding: calc((100vw - 1024px + (var(--base-padding) * 2)) / 2);
+
+    --padding-left: var(--horizontal-padding);
+    --padding-right: var(--horizontal-padding);
+
+    --header-height: 60px;
+    --search-form-height: 60px;
+}
+
+header:not(.fixed) {
+    width: calc(100vw - (var(--base-padding) * 2));
+    margin-left: calc((var(--padding-left) * -1) + var(--base-padding));
+}
+
+.header-search-form .search-reset {
+    margin-left: unset;
+}
+
+header.fixed .user-menu {
+    flex: 1 1 300px;
+    justify-content: flex-end;
+    margin-right: unset;
+}
+
+header.fixed .user-menu .user-info .user-name-section {
+    display: flex;
+    width: auto;
+}
+
+main.results-list {
+    max-width: calc(1024px * .8);
+}
+
+.result-item {
+    background-color: unset;
+    box-shadow: unset;
+}
